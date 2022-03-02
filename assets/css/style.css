@@ -1,0 +1,373 @@
+:root {
+    --primary-color: #2185D5;
+    --secondary-color: #3A4750;
+    --hover-color: #3A4750;
+    --background-color: #F3F3F3;
+}
+
+:root .dark {
+    --primary-color: #3A4750;
+    --secondary-color: #3A4750;
+    --hover-color: #2185D5;
+    --background-color: #F3F3F3;
+}
+
+* {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-y: overlay;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+body {
+    display: flex;
+    background-color: var(--background-color);
+}
+
+.page-header {
+    position: fixed;
+    width: 200px;
+    min-height: 100%;
+    background-color: var(--primary-color);
+    overflow: auto;
+}
+
+.page-header nav {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    min-height: 100%;
+    /* justify-content:space-around; */
+}
+
+.logo {
+    display: flex;
+    height: 8vh;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.logo img {
+    height: 100%;
+}
+
+.page-header ul {
+    width: 100%;
+    margin: 15px 0 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.page-header li {
+    display: flex;
+    width: 100%;
+    height: 45px;
+    padding: 0 0 0 15px;
+    color: var(--background-color);
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.page-header li:hover {
+    background-color: var(--hover-color);
+}
+
+.page-header li img {
+    filter: invert(100);
+}
+
+.page-header li p {
+    margin: 0 0 0 15px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    width: calc(100vw - 200px);
+    height: 8vh;
+    align-items: center;
+    color: var(--background-color);
+    padding: 5px;
+    justify-content: center;
+    background-color: var(--primary-color);
+    z-index: 99;
+}
+
+.header h3 {
+    margin: 0;
+}
+
+.header #settings-icon {
+    position: absolute;
+    top: 2vh;
+    right: 2vh;
+    width: 2vw;
+    height: 2vw;
+    filter: invert(100);
+    cursor: pointer;
+}
+
+.header #settings-icon:hover img{
+    filter: invert(100);
+}
+
+.settings-menu {
+    position: fixed;
+    display: none;
+    width: 200px;
+    top: 8vh;
+    right: 0;
+    background-color: var(--background-color);
+}
+
+.settings-menu ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: var(--primary-color);
+}
+
+.settings-menu li {
+    display: flex;
+    width: 100%;
+    height: 45px;
+    padding: 0 0 0 15px;
+    color: var(--background-color);
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.settings-menu li:hover {
+    background-color: var(--hover-color);
+}
+
+.settings-menu li img {
+    filter: invert(100);
+}
+
+.settings-menu li p {
+    margin: 0 0 0 15px;
+}
+
+.wrapper {
+    /* display: flex; */
+    width: 100vw;
+    min-height: 100vh;
+    align-items: center;
+    margin-left: 200px;
+    justify-content: center;
+    background-color: var(--background-color);
+    /* overflow-y: scroll; */
+}
+
+.page-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 15vh 0 15vh 0;
+    background: transparent;
+    justify-content: center;
+    /* overflow-y: scroll; */
+}
+
+.container {
+    width: 100%;
+    max-height: 100%;
+    /* padding: 0 5%; */
+}
+
+.title {
+    display: flex;
+    width: 100%;
+    margin-bottom: 50px;
+    /* padding: 0 10px; */
+    justify-content: space-between;
+}
+
+.title h2 {
+    font-weight: 600;
+}
+
+.add-items-container {
+    display: none;
+    position: absolute;
+    top: 15vh;
+    align-items: center;
+    width: 80%;
+    max-height: 75vh;
+    padding: 50px 0;
+    background-color: white;
+    z-index: 99;
+    justify-content: center;
+    box-shadow: 10px 0px 10px 10px #CCC;
+    overflow-y: scroll;
+}
+
+.add-items-container .buttons-row {
+    justify-content: space-between;
+    padding: 0 0 0 0;
+}
+
+.add-items-container .container {
+    padding: 0 5%;
+}
+
+.add-items-container .title {
+    margin-bottom: 20px;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.close-button:hover {
+    background-color: red;
+}
+
+.table-responsive thead {
+    color: var(--background-color);
+    background-color: var(--primary-color);
+}
+
+.table {
+    /* min-width: 70vw; */
+    border-radius: 5px;
+}
+
+.entry-table {
+    margin: 0 0 30px 0;
+    width: 100%;
+    /* padding: 10px; */
+    background-color: white;
+    box-shadow: 2px 2px 10px var(--secondary-color);
+}
+
+.entry-table thead {
+    height: 45px;
+    color: var(--background-color);
+    text-align: center;
+    font-size: 20px;
+    background-color: var(--primary-color);
+}
+
+.entry-table tbody tr {
+    align-items: center;
+}
+
+.entry-table th, .entry-table td {
+    padding: 12px 15px;
+}
+
+.input-box {
+    width: 100%;
+    height: 45px;
+    margin: 10px 0 0 0;
+    padding: 0 0 0 15px;
+    border: 1px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-box:focus {
+    border-color: var(--primary-color);
+}
+
+button {
+    display: flex;
+    height: 45px;
+    padding: 0 15px 0 15px;
+    align-items: center;
+    color: var(--background-color);
+    border: none;
+    border-radius: 5px;
+    justify-content: center;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+    box-shadow: 5px 5px 10px var(--secondary-color);
+}
+
+button img {
+    filter: invert(100);
+}
+
+button p {
+    margin: 0 0 0 5px;
+}
+
+#remove-item:hover {
+    background-color: var(--red);
+}
+
+.buttons-row {
+    align-items: center;
+    display: flex;
+    padding: 0 3% 3% 3%;
+    justify-content: space-between;
+}
+
+.button {
+    display: flex;
+}
+
+button + button, input + button {
+    margin-left: 10px;
+}
+
+.page-header .logout-button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+    bottom: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.footer {
+    position: fixed;
+    display: flex;
+    right: 0;
+    bottom: 0;
+    width: calc(100vw - 200px);
+    /* width: 100%; */
+    align-items: center;
+    padding: 5px 10px;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    justify-content: center;
+    background-color: var(--primary-color);
+    z-index: 99;
+}
